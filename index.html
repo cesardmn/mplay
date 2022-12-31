@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/icon/tribos.jpg" />
+
+    <title>Tribos Player</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rationale&family=Ubuntu:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- TOP -->
+      <div class="top fixed">
+        <!-- UP FILES -->
+        <div class="files xs50">
+          <label for="upfiles" class="upfiles">up músicas</label>
+          <input
+            type="file"
+            name="upfiles"
+            id="upfiles"
+            style="display: none"
+            accept="audio/*"
+            multiple
+          />
+        </div>
+
+        <!-- STOPWATCH -->
+        <div class="stopwatch xs50">
+          <span class="hours">00</span>: <span class="minutes">00</span>:
+          <span class="seconds">00</span>
+        </div>
+      </div>
+
+      <!-- PLAYER -->
+      <div class="player">
+        <h3 class="musicOnPlay"></h3>
+        <audio src="" controls class="audioPlay" ></audio>
+      </div>
+
+      <!-- PLAYLIST -->
+      <ol class="playlist"></ol>
+
+      <!-- BOTTOM -->
+      <div class="bottom fixed">
+        <div class="controls">
+          <button class="iconBtn btnPlayPause">play</button>
+          <button class="iconBtn btnMinus">-</button>
+          <button class="iconBtn btnPlus">+</button>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./src/js/app.js"></script>
+  </body>
+</html>
