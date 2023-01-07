@@ -93,7 +93,7 @@ audio {
 }
 
 .playlist {
-  height: 65vh;
+  height: 55vh;
   width: 100%;
   overflow: scroll;
   margin-bottom: 50vh;
