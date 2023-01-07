@@ -11,11 +11,17 @@ export const Player = () => {
     window.navigator.vibrate(100)
     $music.pause()
     $music.currentTime = 0
+    if ($music.src) {
+      $btnPlayPause.innerText = 'PLAY'
+    }
     run = false
   }
 
   const play = () => {
     $music.play()
+    if ($music.src) {
+      $btnPlayPause.innerText = 'STOP'
+    }
     run = true
     window.navigator.vibrate(100)
   }
@@ -44,28 +50,34 @@ export const Player = () => {
   })
 
   // Play Pause
-  $btnPlayPause.addEventListener('click', () => (run ? stop() : play()))
-
-  let vol = 1
-  $btnMinus.addEventListener('click', () => {
-    window.navigator.vibrate(100)
-
-    if (vol >= 0) {
-      $music.vol = vol
-      console.log(vol)
-      vol -= 0.1
+  $btnPlayPause.addEventListener('click', () => {
+    if (run) {
+      stop()
+    } else {
+      play()
     }
   })
 
-  $btnPlus.addEventListener('click', () => {
-    window.navigator.vibrate(100)
+  // let vol = 1
+  // $btnMinus.addEventListener('click', () => {
+  //   window.navigator.vibrate(100)
 
-    if (vol <= 1) {
-      $music.vol = vol
-      vol += 0.1
-      console.log(vol)
-    }
-  })
+  //   if (vol >= 0) {
+  //     $music.vol = vol
+  //     console.log(vol)
+  //     vol -= 0.1
+  //   }
+  // })
+
+  // $btnPlus.addEventListener('click', () => {
+  //   window.navigator.vibrate(100)
+
+  //   if (vol <= 1) {
+  //     $music.vol = vol
+  //     vol += 0.1
+  //     console.log(vol)
+  //   }
+  // })
   // document.body.onkeyup = function (e) {
   //   if (e.key == ' ' || e.code == 'Space' || e.keyCode == 32) {
   //     run = !run
